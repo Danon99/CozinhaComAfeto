@@ -1,6 +1,6 @@
-DROP DATABASE IF EXISTS cozinhacomafeto;
+DROP DATABASE IF EXISTS cozinha;
 
-CREATE DATABASE cozinhacomafeto;
+CREATE DATABASE cozinha;
 
 USE cozinha;
 
