@@ -2,7 +2,7 @@ DROP DATABASE IF EXISTS cozinhacomafeto;
 
 CREATE DATABASE cozinhacomafeto;
 
-USE cozinhacomafeto;
+USE cozinha;
 
 CREATE TABLE users (
   id int(11) NOT NULL AUTO_INCREMENT PRIMARY KEY,
