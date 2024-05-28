@@ -6,10 +6,10 @@ $conn = new PDO($dsn, 'root', '', [
     PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION
 ]);
 
-//$query = 'SELECT * FROM categorias;';
-//$stmt = $conn->query($query);
-//$categorias = $stmt->fetchAll(PDO::FETCH_ASSOC);
-//$count = 0;
+$query = 'SELECT * FROM categorias;';
+$stmt = $conn->query($query);
+$categorias = $stmt->fetchAll(PDO::FETCH_ASSOC);
+$count = 0;
 ?>
 
 <!DOCTYPE html>
