@@ -9,8 +9,8 @@ try {
 } catch(PDOException $e) {
   echo 'Error: ' . $e->getMessage();
 }
-$lista = $pdo->query("SELECT * FROM categorias;");
-$categorias = $lista->fetchall(PDO::FETCH_ASSOC);
+$lista = $pdo->query("SELECT * FROM receitas;");
+$receitas = $lista->fetchall(PDO::FETCH_ASSOC);
 
 
 
@@ -61,18 +61,24 @@ $categorias = $lista->fetchall(PDO::FETCH_ASSOC);
 
 
   <main id="main">
+  
 
   <section id="contact" class="contact ">
         
   
         <div class="container mt-5">
+        
           <form action="cadastra.php" method="post" class="php-email-form" style="width: 70%; margin: auto;">
             <div class="container">
+            <div class="col-lg-12" style="text-align: right;">
+              <a href="../admin/dashboard.php" type="button" class="btn btn-secondary rounded-pill">Voltar</a>
+            </div>
                 <div class="section-title">
-                  <h2><span>Cadastro de categorias</span></h1>
+                  <h2><span>Cadastro de receitas</span></h1>
                   <h3>Seja bem vindo Administrador</h3><br>
+
                   <?php if(isset($_GET['message'])):?>
-                    <div class="alert alert-success" role="alert">
+                    <div class="alert alert-success alert-dismissible fade show" role="alert">
                       <?= $_GET['message']?>
                     </div>
                   <?php endif; ?>
@@ -88,9 +94,25 @@ $categorias = $lista->fetchall(PDO::FETCH_ASSOC);
               </div>
             <div class="row">
               <div class="col-md-12 form-group">
-                <input type="text" name="nome" class="form-control" id="nome" placeholder="Nome da categoria" required>
+                <input type="text" name="titulo" class="form-control" id="titulo" placeholder="Título da receita" required>
               </div>
-            </div>
+              <div class="col-md-12 form-group">
+                <textarea  name="ingredientes" class="form-control" id="ingredientes" placeholder="Ingredientes da receita" required></textarea>
+              </div>
+              <div class="col-md-12 form-group">
+                <textarea name="preparo" class="form-control" id="preparo" placeholder="Modo de preparo" required></textarea>
+              </div>
+              <div class="col-md-12 form-group">
+                <select name="categoria" id="categoria" class="form-control" placeholder="Selecione a categoria">
+                  <option value="volvo">Selecione a categoria</option>
+                </select>              
+                </div>
+              </div>
+              <br>
+              <div class="col-md-12 form-group">
+                <p>Imagem da receita <i class="bx bx-image-add"></i></p>
+                <input type="file" name="img" class="form-control" id="img"required>
+              </div>
 
             <div class="text-center"><button  type="submit">Salvar</button></div>
           </form>
@@ -101,14 +123,14 @@ $categorias = $lista->fetchall(PDO::FETCH_ASSOC);
   <!-- TABLE --> 
   
   <div class="container" >
-    <h3 class="text-center">Tabela de Categorias</h3>
+    <h3 class="text-center">Tabela de Receitas</h3>
     <br>
     <br>
    <table class="table table-action">
   
     <thead>
       <tr>
-        <th class="t-small">Nome</th>
+        <th class="t-small">Titulo da receita</th>
         <th class="t-small">Acões</th>
         
       </tr>
@@ -116,13 +138,13 @@ $categorias = $lista->fetchall(PDO::FETCH_ASSOC);
     
     <tbody>
       <?php
-      foreach ($categorias as  $value){
+      foreach ($receitas as  $value){
 
       
       ?>
       <tr>
        <td>
-         <?= $value["nome"]?> 
+         <?= $value["titulo"]?> 
        </td>
         <td><button type="button" class="btn btn-outline-warning btn-sm">Editar</button>
 <button type="button" class="btn btn-outline-danger btn-sm">Excluir</button></td>

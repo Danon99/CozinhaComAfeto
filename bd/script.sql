@@ -57,3 +57,15 @@ CREATE TABLE item_pedidos (
   foreign key (pedidos_id) references pedidos(id),
   foreign key (receita_id) references receitas(id)  
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+CREATE TABLE administrador (
+  id int(11) NOT NULL AUTO_INCREMENT PRIMARY KEY,
+  username varchar(50) NOT NULL,
+  email varchar (255) not null,
+  password varchar(50) NOT NULL,
+  tipo varchar(50) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+
+INSERT INTO administrador (username, email, password) VALUES
+('admin', 'admin@gmail.com', '123456');
