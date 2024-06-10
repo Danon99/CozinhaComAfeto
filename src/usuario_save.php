@@ -6,7 +6,7 @@ $conn = new PDO($dsn, 'root', '', [
     PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION
 ]);
 
-$query = 'INSERT INTO `users` 
+$query = 'INSERT INTO `usuarios` 
 (`username`, `email`, `password`) 
 VALUES 
 (:username, :email, :password);';

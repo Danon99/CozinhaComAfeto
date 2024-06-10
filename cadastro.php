@@ -3,7 +3,7 @@
     <head>
         <meta charset="utf-8">
         <meta content="width=device-width, initial-scale=1.0" name="viewport">      
-        <title>Login</title>
+        <title>Cadastro</title>
         <link href="assets/img/favicon.png" rel="icon">
         <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
         <link
@@ -43,7 +43,12 @@
                   <input type="password" class="form-control" name="password" id="password" placeholder="Senha" required>
                 </div>
               </div>
-            <div class="text-center"><button type="submit">Cadastrar</button></div>
+            <div class="text-center"><a href="index.php" style="    background: #444444;
+    border: 0;
+    padding: 10px 24px;
+    color: #fff;
+    transition: 0.4s;
+    border-radius: 50px;">Voltar</a> &emsp;<button type="submit">Cadastrar</button></div>
           </form>
         </div>
       </section>

@@ -17,12 +17,12 @@ $username = $_POST['username'];
 $password = $_POST['password'];
 
 // Insere os dados na tabela de usuários
-$sql = "INSERT INTO users (username, password) VALUES ('$username', '$password')";
+$sql = "INSERT INTO usuarios (username, password) VALUES ('$username', '$password')";
 
 if ($conn->query($sql) === TRUE) {
      // Usuário autenticado com sucesso
      echo "<script>alert('Cadastro realizado com sucesso!');</script>";
-     echo "<script>window.location.href = 'index.html';</script>";
+     echo "<script>window.location.href = '../../index.php';</script>";
      exit; // Certifique-se de sair do script após o redirecionamento
 } else {
     echo "Erro ao cadastrar: " . $conn->error;

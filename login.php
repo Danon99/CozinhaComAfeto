@@ -6,10 +6,6 @@ $conn = new PDO($dsn, 'root', '', [
     PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION
 ]);
 
-//$query = 'SELECT * FROM categorias;';
-//$stmt = $conn->query($query);
-//$categorias = $stmt->fetchAll(PDO::FETCH_ASSOC);
-//$count = 0;
 ?>
 
 <!DOCTYPE html>
@@ -66,7 +62,12 @@ $conn = new PDO($dsn, 'root', '', [
                   <input type="password" class="form-control" name="password" id="password" placeholder="Senha" required>
                 </div>
               </div>
-            <div class="text-center"><button type="submit">Login</button></div>
+            <div class="text-center"><a href="index.php" style="    background: #444444;
+    border: 0;
+    padding: 10px 24px;
+    color: #fff;
+    transition: 0.4s;
+    border-radius: 50px;">Voltar</a> &emsp;<button type="submit">Login</button></div>
           </form>
         </div>
       </section>

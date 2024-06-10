@@ -23,7 +23,7 @@ $result = $conn->query($sql);
 if ($result->num_rows > 0) {
     // Usuário autenticado com sucesso
     echo "<script>alert('Login realizado com sucesso!');</script>";
-    echo "<script>window.location.href = '../admin/dashboard.php';</script>";
+    echo "<script>window.location.href = 'admin/dashboard.php';</script>";
     exit; // Certifique-se de sair do script após o redirecionamento
 } else {
     // Falha na autenticação
