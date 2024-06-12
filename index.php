@@ -41,6 +41,19 @@ $fotos = $stmt->fetchAll(PDO::FETCH_ASSOC);
     <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
     <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
     <link href="assets/css/style.css" rel="stylesheet">
+    <style>
+
+    .gallery-item {
+        width: 100%; /* Define a largura máxima do item da galeria */
+        height: auto; /* Mantém a proporção da imagem */
+    }
+
+    .gallery-image {
+        width: 100%; /* Define a largura máxima da imagem como 100% */
+        height: 250px; /* Define a altura máxima da imagem (ajuste conforme necessário) */
+        object-fit: cover; /* Garante que a imagem cubra todo o espaço designado */
+    }
+</style>
 </head>
 
 <body>
@@ -113,7 +126,7 @@ $fotos = $stmt->fetchAll(PDO::FETCH_ASSOC);
                 <div class="row">
 
                     <div class="col-lg-5 align-items-stretch video-box"
-                        style='background-image: url("assets/img/capavideo.jpeg");'>
+                        style='background-image: url("assets/img/foto.jpeg");'>
                         <a href="https://youtube.com/shorts/Va052xeWNys?si=MqrIZKdl5XucEtcy" target="blank" class="venobox play-btn mb-4"
                             data-vbtype="video" data-autoplay="true"></a>
                     </div>
@@ -210,15 +223,20 @@ $fotos = $stmt->fetchAll(PDO::FETCH_ASSOC);
                 </div>
 
                 <div class="row g-0">
-                <?php foreach($fotos as  $foto): ?>
-                    <div class="col-lg-3 col-md-4">
-                        <div class="gallery-item">
-                            <a href="src/receitas/upload/<?= $foto['foto'] ?>" class="gallery-lightbox">
-                                <img src="src/receitas/upload/<?= $foto['foto'] ?>" alt="" class="img-fluid">
-                            </a>
-                        </div>
-                    </div>
-                <?php endforeach; ?>
+             <!-- Aqui está o seu loop PHP com as imagens -->
+<?php foreach($fotos as $foto): ?>
+    <div class="col-lg-3 col-md-4">
+        <div class="gallery-item">
+            <a href="src/receitas/upload/<?= $foto['foto'] ?>" class="gallery-lightbox">
+                <img src="src/receitas/upload/<?= $foto['foto'] ?>" alt="" class="img-fluid gallery-image">
+            </a>
+        </div>
+    </div>
+<?php endforeach; ?>
+
+<!-- Estilo CSS para garantir que todas as imagens tenham as mesmas dimensões -->
+
+
 
                 </div>
 
